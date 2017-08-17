@@ -4,7 +4,7 @@ var AppDispatcher=new Dispatcher();
 AppDispatcher.register(function(action){
     switch(action.actionType){
         case "ONLOAD":
-            ListStore.loadData(action.data);
+            ListStore.setClassList(action.data);
             ListStore.onChange();
             break;
         default:

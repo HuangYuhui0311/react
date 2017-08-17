@@ -1,9 +1,27 @@
 import React from "react";
 import {Link} from "react-router";
 import NavLink from "../NavLink.jsx";
-import $ from "jquery";
+import ListStore from "../../flux/ListStore";
 
 export default class Classes extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            classList:ListStore.getClassList()
+        }
+        this._onChange=this._onChange.bind(this);
+    }
+    componentDidMount(){
+        ListStore.addChangeListener(this._onChange)
+    }
+    componentWillUnmount(){
+        ListStore.removeChangeListener(this._onChange)
+    }
+    _onChange(){
+        this.setState({
+            classList : ListStore.getClassList()
+        })
+    }
 
     render(){
         var classId=this.props.params.classId;
@@ -12,7 +30,7 @@ export default class Classes extends React.Component{
             <div className="course">
                 <p><Link to="/">首页</Link> > <Link to="/openClass">点师课堂</Link> > <Link to="/openClass">大咖公开课</Link> > 讲师之道 </p>
                 {
-                    this.state.classContent.map(function(item,index){
+                    this.state.classList.map(function(item,index){
                         if(classId==item.id){
                             return (
                                 <div>

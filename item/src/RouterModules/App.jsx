@@ -1,7 +1,30 @@
 import React from "react";
 import NavLink from "./NavLink.jsx";
+import $ from "jquery";
+import ListAction from "../flux/ListAction";
 
 export default class App extends React.Component{
+    constructor(props){
+        super(props);
+        this.loadComponentClassData = this.loadComponentClassData.bind(this);
+    }
+    loadComponentClassData(){
+        $.ajax({
+            url : 'http://172.168.1.177:3030/classData.json',
+            dataType :'json',
+            async:'false',
+            type:'get',
+            success:function(data){
+                ListAction.setClassList(data);
+            }.bind(this),
+            error:function(err){
+                console.log(err);
+            }
+        })
+    }
+    componentDidMount(){
+        this.loadComponentClassData()
+    }
     render(){
         return (
             <div className="body">

@@ -1,7 +1,6 @@
 import React from "react";
 import {Link} from "react-router";
-import ListStore from "../../flux/ListStore"
-import $ from "jquery";
+import ListStore from "../../flux/ListStore";
 
 export default class OpenClass extends React.Component{
     constructor(props){
@@ -9,7 +8,20 @@ export default class OpenClass extends React.Component{
         this.state={
             classList:ListStore.getClassList()
         }
+        this._onChange=this._onChange.bind(this);
     }
+    componentDidMount(){
+        ListStore.addChangeListener(this._onChange)
+    }
+    componentWillUnmount(){
+        ListStore.removeChangeListener(this._onChange)
+    }
+    _onChange(){
+        this.setState({
+            classList : ListStore.getClassList()
+        })
+    }
+
     render(){
         return (
             <div className="bd03 content">
