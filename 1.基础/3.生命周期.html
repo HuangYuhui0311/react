@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/react.js"></script>
+    <script src="../js/react-dom.js"></script>
+    <script src="../js/browser.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<script type="text/babel">
+
+    var MyParent=React.createClass({
+        getInitialState:function(){
+            return {
+                msg:"yes"
+            }
+        },
+        _onParentChange:function(newMsg){
+            var newMsg=newMsg?"yes":"no";
+            this.setState({
+                msg:newMsg
+            })
+        },
+        
+        render:function(){
+            var msg=this.state.msg;
+            return (
+                <div>
+                    您当前选择的是{msg}
+                    <div>
+                        <MyChild text="请选择" onParentChange={this._onParentChange}/>
+                    </div>
+                </div>
+            )
+        }
+    })
+    var MyChild=React.createClass({
+        getInitialState:function(){
+            return {
+                checked:true
+            }
+        },
+        _onChildChange:function(){
+            var newChecked=!this.state.checked;
+            this.setState({
+                checked:newChecked
+            });
+            this.props.onParentChange(newChecked);
+        },
+        render:function(){
+            var text=this.props.text;
+            var checked=this.state.checked
+            return (
+
+                    <label>{text}<input type="checkbox" onChange={this._onChildChange} defaultChecked={checked}/></label>
+            )
+        }
+    })
+    ReactDOM.render(
+        <MyParent/>,
+        document.getElementById("app")
+    )
+</script>
+</body>
+</html>
