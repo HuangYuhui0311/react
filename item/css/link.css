@@ -1,0 +1,274 @@
+*{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration: none;
+    color:#333;
+}
+li{
+    list-style:none;
+}
+.clear:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+.body{
+    width:1200px;
+    margin:0 auto;
+}
+.active{
+    color:orangered;
+}
+.nav{
+    height:89px;
+    border-bottom:1px solid #ccc;
+}
+.nav .logo{
+    float:left;
+}
+.nav ul{
+    float:left;
+    padding-left:50px;
+}
+.nav li{
+    float:left;
+}
+.nav li a{
+    display:block;
+    padding:0 18px;
+    height:89px;
+    line-height:89px;
+}
+.nav li a:hover{
+    color:orangered;
+}
+.content{
+    width:100%;
+    height:648px;
+}
+.bd01{
+    background:url(../img/pic01.jpg) no-repeat center top;
+}
+.bd02{
+    background:#fbfbfb;
+    padding:30px 0 0 5px;
+    /*background:url(../img/pic02.jpg) no-repeat center top;*/
+}
+.bd03{
+    padding-top:3px;
+    background:#f5f5f5;
+    /*background:url(../img/pic03.jpg) no-repeat center top;*/
+}
+.bd04{
+    background:url(../img/pic04.jpg) no-repeat center top;
+}
+.bd05{
+    background:url(../img/pic05.jpg) no-repeat center top;
+}
+.aboutL{
+    float:left;
+    width:200px;
+    background:#fff;
+}
+.aboutR{
+    float:left;
+    margin-left:18px;
+    width:980px;
+    height:670px;
+}
+.aboutL li a{
+    display:block;
+    width:200px;
+    height:42px;
+    line-height:42px;
+    color:#666;
+    text-align:center;
+}
+.aboutActive{
+    background:#f5f5f5;
+    border-left:3px solid #f06b1c;
+}
+.about01{
+    background:url(../img/abo01.jpg) no-repeat left top;
+}
+.about02{
+    background:url(../img/abo02.jpg) no-repeat left top;
+}
+.about03{
+    background:url(../img/abo03.jpg) no-repeat left top;
+}
+.about04{
+    background:url(../img/abo04.jpg) no-repeat left top;
+}
+.about05{
+    background:url(../img/abo05.jpg) no-repeat left top;
+}
+.about06{
+    background:url(../img/abo06.jpg) no-repeat left top;
+}
+.classL{
+    width:986px;
+    padding-left:6px;
+    float:left;
+}
+.classL li{
+    float:left;
+    width:308px;
+    height:215px;
+    margin:0 20px 20px 0;
+    background:#fff;
+}
+.classL li img{
+    width:100%;
+    height:136px;
+}
+.classL .dec{
+    padding:10px;
+}
+.classL .title{
+    font-size:16px;
+    color:#343436;
+    line-height:32px;
+    height:32px;
+}
+.classL .tips{
+    font-size:12px;
+    line-height:28px;
+    color:#858585;
+}
+.tips .tL{
+    float:left;
+}
+.tips .tR{
+    float:right;
+}
+.tips .tR i{
+    font-size:16px;
+    color:#93c27a;
+    font-style:normal;
+}
+.classR{
+    padding-right:6px;
+    float:right;
+}
+.bd03>p,.course>p{
+    padding-left:6px;
+    height:58px;
+    line-height:58px;
+    font-size:14px;
+    color:#5a5a5a;
+}
+.course{
+    padding-top:3px;
+}
+.course_bd{
+    width:100%;
+    height:295px;
+}
+.courseL{
+    width:590px;
+    height:250px;
+    float:left;
+}
+.courseR{
+    width:550px;
+    float:left;
+    margin-left:50px;
+}
+.courseR h2{
+    font-size:26px;
+    line-height:36px;
+    height:36px;
+    font-weight:normal;
+    color:#333;
+}
+.courseR p{
+    margin-top:10px;
+    font-size:14px;
+    line-height:22px;
+}
+.courseR .p2{
+    color:#858585;
+}
+.courseR .p3{
+    font-size:16px;
+    color:#dbd0cc;
+}
+.courseR .p3 i{
+    font-size:24px;
+    color:#93c27a;
+    font-style:normal;
+}
+.courseR .p4{
+    margin-top:25px;
+}
+.courseR .p4 a{
+    display:inline-block;
+    width:130px;
+    height:36px;
+    line-height:36px;
+    font-size:18px;
+    text-align:center;
+    color:#f06b1b;
+    border:1px solid #f06b1b;
+    margin-right:15px;
+}
+.courseR .p4 a:hover,.courseR .p4 a.on{
+    background:#f06b1b;
+    color:#fff;
+}
+.cou{
+    padding:20px 10px 0 0;
+    background:#f5f5f5;
+}
+.course_link{
+    float:left;
+    width:910px;
+}
+.course_link p{
+    background:#fff;
+}
+.course_link a{
+    display:inline-block;
+    width:133px;
+    height:36px;
+    line-height:36px;
+    text-align:center;
+}
+.teacher{
+    float:right;
+    width:270px;
+    height:500px;
+    background:#fff;
+}
+.tehImg{
+    overflow:hidden;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    margin:20px auto;
+}
+.tehImg img{
+    width:120px;
+    height:120px;
+}
+.teacher p.name{
+    margin:0 5px;
+    text-align:center;
+    border-bottom:1px solid #ccc;
+}
+.teacher p.intro{
+    padding:20px;
+    font-size:14px;
+    color:#333;
+}
+.cou_intro,.cou_online{
+    margin-top:3px;
+    background:#fff;
+    height:500px;
+}
+.cou_online{
+
+}
