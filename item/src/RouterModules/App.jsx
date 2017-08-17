@@ -2,6 +2,7 @@ import React from "react";
 import NavLink from "./NavLink.jsx";
 import $ from "jquery";
 import ListAction from "../flux/ListAction";
+import Footer from "../components/Footer.jsx";
 
 export default class App extends React.Component{
     constructor(props){
@@ -41,6 +42,7 @@ export default class App extends React.Component{
                     </ul>
                 </div>
                 {this.props.children}
+                <Footer></Footer>
             </div>
         )
     }
