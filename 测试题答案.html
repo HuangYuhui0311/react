@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1、截取字符串abcdace的ace
+    /*var str="abcdace";
+    var s1=str.slice(4);
+    var s2=str.substring(4);
+    var s3=str.substr(4);
+    console.log(s1,s2,s3);*/
+
+    //2.javascript面向对象中继承实现
+   /* function Amn(name){
+        this.name=name||"Amn";
+        this.sleep=function(){
+            alert(this.name+"正在睡觉");
+        }
+    }
+    Amn.prototype.eat=function(){
+        alert(this.name+"正在吃东西");
+    }
+    var amn=new Amn("kaka");
+    function Cat(){}
+    Cat.prototype=amn;
+    var cat=new Cat();
+    cat.sleep();
+    cat.eat();*/
+
+   //3.判断一个字符串中出现次数最多的字符，统计这个次数？
+    /*var str="78478787878899888888dfudhfdshshd";
+    var json={}
+    for(var i=0;i<str.length;i++){
+        if(!json[str.charAt(i)]){
+            json[str.charAt(i)]=1;
+        }else{
+            json[str.charAt(i)]++;
+        }
+    }
+    console.log(json);
+    var iMax=0;
+    var s="";
+    for(key in json){
+        if(json[key]>iMax){
+            iMax=json[key];
+            s=key;
+        }
+    }
+    console.log("出现次数最多的字符是 "+s+",出现次数为"+iMax);*/
+
+    //4.编写一个方法 求一个字符串的字节长度
+    /*(function(str){
+        for(var i=0,len=0;i<str.length;i++){
+            if(str.charCodeAt(i)>255){
+                len+=2;
+            }else{
+                len++
+            }
+        }
+        console.log(len)
+    })("你好呀");*/
+
+    //5.编写一个方法 去掉一个数组的重复元素
+    /*var arr=[1,1,3,3,3,3,5,5,67,7,7,]
+    for(var i=0,o={},temp=[],count=0;i<arr.length;i++){
+        if(o[arr[i]]){
+            o[arr[i]]++;
+            count++;
+        }else{
+            o[arr[i]]=1;
+            temp.push(arr[i]);
+        }
+    }
+    console.log(count,o,temp);*/
+
+    //6.请说出三种减低页面加载时间的方法
+    /*
+        (1)重复的HTTP请求数量应尽量减少
+        (2)服务器启用gzip压缩功能
+            将要传输的文件压缩后传输到客户端再解压，在网络传输 数据量会大幅减小。在服务器上的Apache、Nginx可直接启用，也可用代码直接设置传输文件头，增加gzip的设置，也可从 负载均衡设备直接设置。不过需要留意的是，这个设置会略微增加服务器的负担。服务器性能不是很好的网站，要慎重考虑。
+        (3) 在文件头部放置css样式的定义
+        (4)文件末尾放Javascript脚本
+        (5)压缩Javascript、CSS代码
+        (6)Ajax采用缓存调用
+        (7)尽可能减少DCOM元素
+    **/
+
+    //7.文档类型的作用是什么？你知道多少种文档类型？
+    //http://www.cnblogs.com/idayln/p/3390783.html
+
+    //8.网页中实现一个计算当年还剩多少时间的倒数计时程序，要求网页上实时动态显示“××年还剩××天××时××分××秒”
+   /* function counter(){
+        var date = new Date();
+        var year =  date.getFullYear();
+        var date2 = new Date(year,12,31,23,59,59);
+        var time = (date2  - date) / 1000;
+        var day = Math.floor(time / (24 * 60 * 60));
+        var hour = Math.floor(time % (24 * 60 * 60) / (60 * 60));
+        var minute = Math.floor(time % (24 * 60 * 60) % (60 * 60)  / 60);
+        var second = Math.floor(time % (24 * 60 * 60) % (60 * 60)  % 60);
+        var str = `${year}年还剩${day}天${hour}时${minute}分${second}秒`;
+        console.log(str)
+    }
+    window.setInterval("counter()",1000);//不加引号是调用，加引号是寻找函数*/
+   /*
+    window.setInterval()
+        功能：按照指定的周期（以毫秒计）来调用函数或计算表达式。
+        语法：setInterval(code,millisec)
+        解释：code：在定时时间到时要执行的JavaScript代码串。
+              millisec：设定的定时时间，用毫秒数表示。
+        返回值：定时器的ID值，可用于clearInterval()方法停止指定的定时器。
+        注：setInterval()方法会不停地调用函数，直到用clearInterval()终止定时或窗口被关闭。
+
+    window.clearInterval()
+        功能：取消由setInterval()方法设置的定时器。
+        语法：clearInterval(id_of_setinterval)
+        解释：id_of_setinterval：由setInterval()返回的ID值。该值标识了一个setInterval定时器。
+        也就是：window.setInterval()返回的就是window.clearInterval的参数
+*/
+
+   //9.请尽可能详尽的解释AJAX的工作原理。
+    /*第一步：创建ajax对象（XMLHttpRequest/ActiveXObject(Microsoft.XMLHttp)）
+    第二步：判断数据传输方式(GET/POST)
+    第三步：打开链接 open()
+    第四步：发送 send()
+
+    当ajax对象完成第四步（onreadystatechange）数据接收完成，判断http响应状态（status）200-300之间或者304（缓存）执行回调函数
+    注意：检测XMLHttpRequest对象的readyState属性，该属性表示请求／响应过程的当前活动阶段，属性值如下：
+    0：未初始化。尚未调用open()方法
+    1：启动。已经调用open()方法，但尚未调用send()方法
+    2：发送。已经调用send()方法，但尚未接收到响应
+    3：接收。已经接收到部分响应数据
+    4:   完成。已经接收到全部响应数据，而且已经可以在客户端使用了（如果写原生的js ajax请求需要等到 readyState==4的时候再做处理）其他的js库已经做好处理了*/
+
+</script>
+</body>
+</html>
